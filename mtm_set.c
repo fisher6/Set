@@ -136,21 +136,6 @@ SetElement setContains(Set set, SetElement element) {
 	return NULL;
 }
 
-/**
- *	setAdd: Adds a new element to the set.
- *  Iterator's value is undefined after this operation.
- *
- * @param set - The set for which to add an element
- * @param element - The element to insert. A copy of the element will be
- * 		inserted as supplied by the copying function which is given at
- * 		initialization.
- * @return
- * 	SET_NULL_ARGUMENT if a NULL was sent as set
- * 	SET_OUT_OF_MEMORY if an allocation failed (Meaning the function for copying
- * 	an element failed)
- *  SET_ITEM_ALREADY_EXISTS if an equal item already exists in the set
- * 	SET_SUCCESS the element has been inserted successfully
- */
 SetResult setAdd(Set set, SetElement element) {
 	IF_NULL_RETURN_SET_NULL_ARGUMENT(set)
 	IF_NULL_RETURN_SET_NULL_ARGUMENT(element)
@@ -185,22 +170,6 @@ SetResult setAdd(Set set, SetElement element) {
 	return SET_SUCCESS;
 }
 
-/**
- * 	setRemove: Removes an element from the set. The element is found using the
- * 	comparison function given at initialization. Once found, the element is
- * 	removed and deallocated using the free function supplied at initialzation.
- *  Iterator's value is undefined after this operation.
- *
- * @param set
- * 	The set to remove the element from.
- * @param element
- * 	The element to remove from the set. The element will be freed using the
- * 	free function given at initialization.
- * @return
- * 	SET_NULL_ARGUMENT if a NULL was sent as set
- * 	SET_ITEM_DOES_NOT_EXIST if the element doesn't exist in the set
- * 	SET_SUCCESS if the element was successfully removed.
- */
 SetResult setRemove(Set set, SetElement element) {
 	IF_NULL_RETURN_SET_NULL_ARGUMENT(set)
 	IF_NULL_RETURN_SET_NULL_ARGUMENT(element)
